@@ -36,7 +36,7 @@ class LinkedList:
                 return current.value
             current = current.next
             count += 1
-        print("Nothing is found. I will replace this msg with propper error")
+        raise IndexError("list index out of range")
 
 
 if __name__ == '__main__':
@@ -48,4 +48,4 @@ if __name__ == '__main__':
     linked_list = LinkedList(node_1)
 
 
-    print(linked_list.getItem(1))
+    print(linked_list.getItem(6))
