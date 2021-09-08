@@ -5,13 +5,19 @@
 class Node:
     """
     This is a simple single Node of a linked list.
-    If self.next is False, then it is the end of the Linked List.
+    If self.next is False, then it is the end node of the Linked List.
     """
-    def __init__(self, value: int = 0, next: Node = None):
+    def __init__(self, value: int = 0, next: "Node" = None):
         self.value = value
         self.next = next
 
-    # We should be able to do at least these four basic operations:
+
+class LinkedList:
+    """This is a Link List itself. It only contains a head node"""
+    def __init__(self, head: Node):
+        self.head = head
+        
+    # We have to do at least four basic operations with Linked List:
     #
     # 1. Get the nth element of the list
     #
@@ -21,4 +27,25 @@ class Node:
     #
     # 4. Remove an element by value
 
-    
+    def getItem(self, n: int) -> int:
+        count: int = 0
+        current: Node = self.head
+
+        while current:
+            if count == n:
+                return current.value
+            current = current.next
+            count += 1
+        print("Nothing is found. I will replace this msg with propper error")
+
+
+if __name__ == '__main__':
+    # A test linked list and its nodes
+    node_3 = Node(100)
+    node_2 = Node(23, node_3)
+    node_1 = Node(432, node_2)
+
+    linked_list = LinkedList(node_1)
+
+
+    print(linked_list.getItem(1))
