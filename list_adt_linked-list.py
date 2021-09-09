@@ -49,6 +49,12 @@ class LinkedList:
             current = current.next
         return False
 
+    # Insert an element at the front
+    def insertFront(self, value: int):
+        newHead = Node(value, self.head)
+        self.head = newHead
+
+
 
 
 if __name__ == '__main__':
@@ -63,3 +69,8 @@ if __name__ == '__main__':
     print(linked_list.getItem(0))
     print(linked_list.search(432))
     print(linked_list.search(0))
+
+    linked_list.insertFront(92)
+    print(linked_list.getItem(0))
+    print(linked_list.getItem(3))
+    
