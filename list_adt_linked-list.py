@@ -27,6 +27,7 @@ class LinkedList:
     #
     # 4. Remove an element by value
 
+    # Get the nth element of the list
     def getItem(self, n: int) -> int:
         count: int = 0
         current: Node = self.head
@@ -38,6 +39,17 @@ class LinkedList:
             count += 1
         raise IndexError("list index out of range")
 
+    # Search for a value in the list
+    def search(self, value: int) -> bool:
+        current: Node = self.head
+
+        while current:
+            if current.value == value:
+                return True
+            current = current.next
+        return False
+
+
 
 if __name__ == '__main__':
     # A test linked list and its nodes
@@ -48,4 +60,6 @@ if __name__ == '__main__':
     linked_list = LinkedList(node_1)
 
 
-    print(linked_list.getItem(6))
+    print(linked_list.getItem(0))
+    print(linked_list.search(432))
+    print(linked_list.search(0))
