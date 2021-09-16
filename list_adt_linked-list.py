@@ -56,7 +56,7 @@ class LinkedList:
         return False
 
     # Insert an element at the front
-    def insertFront(self, value: int):
+    def insert_front(self, value: int):
         newHead = Node(value, self.head)
         self.head = newHead
 
