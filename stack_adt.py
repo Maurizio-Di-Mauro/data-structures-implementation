@@ -47,4 +47,3 @@ class Stack_List_Imp:
 
     def is_full(self) -> bool:
         return self.length == self.maxsize
-        
